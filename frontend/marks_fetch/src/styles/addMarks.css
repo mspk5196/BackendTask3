@@ -1,0 +1,57 @@
+.addMarks {
+    background-color: rgb(241, 241, 241);  
+    margin: auto auto;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.addMarks input[type="number"] {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* .marksTable {
+    width: 100%;
+    max-height: 50%;
+    overflow-y: auto;
+    margin: 10px auto;
+    /* border-collapse: collapse; 
+}
+.marksTable th, .marksTable td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    text-wrap: wrap;
+ text-align: center;
+}
+
+.marksTable tr{
+    height: 50px;
+    
+}
+.marksTable th {
+    background-color: #f2f2f2;
+} */
+.displayMarks {
+    max-height: 370px;
+    overflow-y: auto;
+    
+    width: 100%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #adadad;
+    z-index: 1;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
