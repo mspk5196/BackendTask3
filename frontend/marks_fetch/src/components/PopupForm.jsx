@@ -14,8 +14,6 @@ export default function PopupForm({ open, onClose, onSubmit, selectedMark }) {
     const [subject4, setSubject4] = useState('');
     const [subject5, setSubject5] = useState('');
     const [email, setEmail] = useState('');
-    const [total, setTotal] = useState(0);
-    const [isTotalCalculated, setIsTotalCalculated] = useState(false);
     const [errors, setErrors] = useState({});
 
     useEffect(() => {
@@ -23,17 +21,6 @@ export default function PopupForm({ open, onClose, onSubmit, selectedMark }) {
             fetchEditMarks(selectedMark.ID);
         }
     }, [selectedMark]);
-
-    const calculateTotal = () => {
-        const total = (parseFloat(subject1) || 0) +
-            (parseFloat(subject2) || 0) +
-            (parseFloat(subject3) || 0) +
-            (parseFloat(subject4) || 0) +
-            (parseFloat(subject5) || 0);
-        setTotal(total);
-        setIsTotalCalculated(true);
-        setErrors(prev => ({ ...prev, total: undefined }));
-    };
 
     const validateFields = () => {
         const newErrors = {};
@@ -51,7 +38,12 @@ export default function PopupForm({ open, onClose, onSubmit, selectedMark }) {
 
     const handleSubmit = () => {
         if (!validateFields()) return;
-        calculateTotal();
+
+        const total = (parseFloat(subject1) || 0) +
+        (parseFloat(subject2) || 0) +
+        (parseFloat(subject3) || 0) +
+        (parseFloat(subject4) || 0) +
+        (parseFloat(subject5) || 0);
 
         onSubmit({
             email,
@@ -88,7 +80,7 @@ export default function PopupForm({ open, onClose, onSubmit, selectedMark }) {
                 setSubject4(marks.Subject4);
                 setSubject5(marks.Subject5);
                 setEmail(marks.EMail);
-                calculateTotal();
+                
             } else {
                 throw new Error(data.error || "Failed to fetch marks");
             }

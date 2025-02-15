@@ -12,28 +12,6 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-/* .marksTable {
-    width: 100%;
-    max-height: 50%;
-    overflow-y: auto;
-    margin: 10px auto;
-    /* border-collapse: collapse; 
-}
-.marksTable th, .marksTable td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-    text-wrap: wrap;
- text-align: center;
-}
-
-.marksTable tr{
-    height: 50px;
-    
-}
-.marksTable th {
-    background-color: #f2f2f2;
-} */
 .displayMarks {
     max-height: 370px;
     overflow-y: auto;
@@ -43,15 +21,55 @@
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 thead th {
     position: sticky;
     top: 0;
-    background-color: #adadad;
+    text-align: center;
+    background: linear-gradient(135deg, #66ea89 0%, #a2924b 100%);
+    color: white;
+    font-weight: bold;
+    padding: 15px;
     z-index: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
 th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.98);
 }
